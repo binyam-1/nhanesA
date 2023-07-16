@@ -37,7 +37,7 @@ nhanes <- function(nh_table, includelabels = FALSE) {
     }
     
     tf <- tempfile()
-    download.file(url, tf, mode = "wb", quiet = TRUE)
+    download.file(url, tf, timeout = 300, mode = "wb", quiet = TRUE)
     
     if(includelabels) {
       xport_struct <- lookup.xport(tf)
